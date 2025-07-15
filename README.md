@@ -1,8 +1,3 @@
----
-title: "README"
-output: html_document
----
-
 # fedscifund: Exploring the impact of federal science grants using R
 
 This package contains various functions to interact with the PubMed and NIH RePORTER APIs to make it easier to analyze the downstream effects of federal science funding. An example script can be found at https://github.com/SteinAcker1/nih_cut_analysis/blob/main/nih_cut_analysis/src/main.Rmd.
@@ -11,7 +6,7 @@ This package contains various functions to interact with the PubMed and NIH RePO
 
 Run the following code snippet to install and load this package:
 
-```{r}
+```
 if(!require(devtools)) install.packages("devtools")
 devtools::install_github("SteinAcker1/fedscifund")
 library(fedscifund)
