@@ -1,0 +1,10 @@
+Package: fedscifund
+Title: Federal science funding matters
+Version: 0.0.0.9000
+Authors@R: 
+    person("Stein", "Acker", , "stein_acker@yahoo.com", role = c("aut", "cre"))
+Description: This package contains various functions to interact with the PubMed and NIH RePORTER APIs to make it easier to analyze the downstream effects of federal science funding.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
