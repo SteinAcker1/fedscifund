@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_citing_articles.R
 \name{get_citing_articles}
 \alias{get_citing_articles}
-\title{Query PubMed}
+\title{Fetch PubMed articles that cite specific PMIDs}
 \usage{
 get_citing_articles(pmid)
 }

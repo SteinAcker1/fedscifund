@@ -1,4 +1,4 @@
-#' Query PubMed
+#' Fetch PubMed articles that cite specific PMIDs
 #' 
 #' This function uses \code{rentrez::entrez_link} 
 #' function to find citations of specified article(s). See \code{rentrez} 
