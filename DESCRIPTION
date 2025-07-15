@@ -1,5 +1,5 @@
 Package: fedscifund
-Title: Federal science funding matters
+Title: Exploring the impact of federal science grants using R
 Version: 0.0.0.9000
 Authors@R: 
     person("Stein", "Acker", , "stein_acker@yahoo.com", role = c("aut", "cre"))
