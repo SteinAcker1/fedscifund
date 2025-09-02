@@ -13,6 +13,8 @@
 #' @param unlist (logical, default = TRUE) Lets the user change the \code{$ids} attribute of the 
 #' output from a \code{list} to \code{vec} object. Enabled by default for quality of life.
 #' 
+#' @param unlist (logical, default = FALSE) Opens a PubMed browser session with the entered query.
+#' 
 #' @param ... Additional arguments accepted by the \code{entrez_search} function, should you wish
 #' to include them.
 #' 
@@ -23,9 +25,20 @@ query_pubmed <- function(
     query, 
     retmax = 9999, 
     unlist = TRUE,
+    browser = FALSE,
     ... 
     ) {
+  if(browser) {
+    query <- query |> 
+      stringr::str_replace_all("\"", "%22") |> 
+      stringr::str_replace_all("\\(", "%28") |> 
+      stringr::str_replace_all("\\)", "%29") |> 
+      stringr::str_replace_all("\\[", "%5B") |> 
+      stringr::str_replace_all("\\]", "%5D") |> 
+      stringr::str_replace_all(" ", "+")
+    browseURL(paste0("https://pubmed.ncbi.nlm.nih.gov/?term=", query, "&size=100"))
+    }
   out <- rentrez::entrez_search(db = "pubmed", term = query, retmax = retmax, ... )
-  out$ids <- unlist(out$ids)
+  if(unlist) out$ids <- unlist(out$ids)
   return(out)
 }

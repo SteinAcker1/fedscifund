@@ -5,7 +5,6 @@
 \title{Query NIH RePORTER}
 \usage{
 query_reporter(
-  criteria = list(fiscal_years = lubridate::year(Sys.Date())),
   include_fields = NULL,
   exclude_fields = NULL,
   offset = 0,
@@ -16,13 +15,11 @@ query_reporter(
   max_pages = NULL,
   flatten_result = TRUE,
   return_meta = FALSE,
-  help = FALSE
+  help = FALSE,
+  ...
 )
 }
 \arguments{
-\item{criteria}{list(); the RePORTER Project API query criteria used to filter results (projects).
-\strong{See Details for schema and other spec rules.}}
-
 \item{include_fields}{character(); optional; use to return only the specified fields from the result.
 \strong{See Details for valid return field names}}
 
@@ -56,6 +53,9 @@ your query and can be useful for programming.}
 
 \item{help}{(default: FALSE) If TRUE, opens https://api.reporter.nih.gov which contains
 information about API fields.}
+
+\item{criteria}{list(); the RePORTER Project API query criteria used to filter results (projects).
+\strong{See Details for schema and other spec rules.}}
 
 \item{query}{A valid JSON request formatted for the RePORTER Project API, as returned
 by the \code{repoRter.nih::make_req} method}

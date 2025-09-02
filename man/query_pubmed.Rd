@@ -4,7 +4,7 @@
 \alias{query_pubmed}
 \title{Query PubMed}
 \usage{
-query_pubmed(query, retmax = 9999, unlist = TRUE, ...)
+query_pubmed(query, retmax = 9999, unlist = TRUE, browser = FALSE, ...)
 }
 \arguments{
 \item{query}{(char) This is your PubMed query. Outputs from \code{create_pubmed_query}
@@ -13,8 +13,7 @@ can go here.}
 \item{retmax}{(int) Maximum number of records to be returned, set by default to the max that
 the PubMed API will allow.}
 
-\item{unlist}{(logical, default = TRUE) Lets the user change the \code{$ids} attribute of the
-output from a \code{list} to \code{vec} object. Enabled by default for quality of life.}
+\item{unlist}{(logical, default = FALSE) Opens a PubMed browser session with the entered query.}
 
 \item{...}{Additional arguments accepted by the \code{entrez_search} function, should you wish
 to include them.}

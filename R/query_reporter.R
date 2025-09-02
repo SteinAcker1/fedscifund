@@ -43,7 +43,6 @@
 #' 
 #' @export
 query_reporter <- function(
-    criteria = list(fiscal_years = lubridate::year(Sys.Date())), 
     include_fields = NULL, 
     exclude_fields = NULL, 
     offset = 0, 
@@ -54,14 +53,15 @@ query_reporter <- function(
     max_pages = NULL,
     flatten_result = TRUE, 
     return_meta = FALSE,
-    help = FALSE
+    help = FALSE,
+    ...
     ) {
   if(help) {
     browseURL("https://api.reporter.nih.gov")
     return()
   }
   query <- repoRter.nih::make_req(
-    criteria = criteria, 
+    criteria = list(...), 
     include_fields = include_fields, 
     exclude_fields = exclude_fields,
     offset = offset,
